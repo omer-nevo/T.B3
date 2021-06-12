@@ -24,7 +24,7 @@ import data
 def main(argv):
     path = argv[1]
     dict = data.Data(path)
-
+    print(dict.data.keys())
 
 
 
