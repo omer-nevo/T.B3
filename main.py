@@ -1,30 +1,29 @@
 import sys
-import os
 import data
-
-
-# def load_data(argv):
-#     """
-#     Loads data from path in first argument
-#     :return: returns data as dictionary
-#     """
-#     if len(argv) < 1:
-#         print('Not enough arguments provided. Please provide the path to the input file')
-#         exit(1)
-#     input_path = argv[1]
-#
-#     if not os.path.exists(input_path):
-#         print('Input file does not exist')
-#         exit(1)
-#
-#     dict = data.Data(input_path)
-#     return dict
-
+import sample
+import cluster
+import distances
 
 def main(argv):
     path = argv[1]
     dict = data.Data(path)
-    print(dict.data.keys())
+
+    samples_list = dict.create_samples()
+    # distances_matrix = distances.create_distances_matrix(samples_list)
+
+
+    # a = []
+    # b = []
+    # a.extend(samples_list[0:10])
+    # b.extend(samples_list[10:20])
+    # c1 = cluster.Cluster(7, b)
+    # c2 = cluster.Cluster(18, a)
+    # c1.merge(c2)
+    #
+    # print(c1.c_id)
+    # print(c2.c_id)
+
+
 
 
 

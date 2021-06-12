@@ -1,6 +1,14 @@
+import math
+
+
 class Sample:
 
     def __init__(self, s_id, genes, label):
+        """
+        :param s_id: sample id (int)
+        :param genes: list of genes values
+        :param label: type of leukemia (string)
+        """
         self.s_id = s_id
         self.genes = genes
         self.label = label
@@ -11,4 +19,10 @@ class Sample:
         :param other: specific sample
         :return: Euclidean distance
         """
-        pass
+        sum = 0
+        for i in range(len(self.genes)):
+            sum += (self.genes[i] - other.genes[i])**2
+        return math.sqrt(sum)
+
+
+
